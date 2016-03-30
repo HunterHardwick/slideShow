@@ -78,15 +78,15 @@ var goPrev = function(){
     $("#slide" + next).stop().fadeIn('slow');
   }
   else{
-	$("#slide" + currentSlide).css("background-position", "50%").animate({backgroundPositionX: "-200%"}).fadeOut('slow');
-    $("#slide" + next).fadeIn('slow').css("background-position", "250%").animate({backgroundPositionX: "50%"});
+	$("#slide" + currentSlide).animate({backgroundPositionX: "-200%"}).css("background-position", "50%").fadeOut('slow');
+    $("#slide" + next).fadeIn('slow').animate({backgroundPositionX: "50%"}).css("background-position", "250%");
   }
   currentSlide = next;
 }
 
 var goNext = function(){
   var next = currentSlide + 1
-  if(next >= 4){
+  if(next > 4){
     next = 1;
   }
   var bw = $("body").width() + "px"
@@ -96,8 +96,8 @@ var goNext = function(){
     $("#slide" + next).stop().fadeIn('slow');
   }
   else{
-		$("#slide" + currentSlide).css("background-position", "50%").animate({backgroundPositionX: "250%"}).fadeOut('slow');
-    $("#slide" + next).fadeIn('slow').css("background-position", "-250%").animate({backgroundPositionX: "50%"});
+		$("#slide" + currentSlide).animate({backgroundPositionX: "250%"}).css("background-position", "50%").fadeOut('slow');
+    $("#slide" + next).fadeIn('slow').animate({backgroundPositionX: "50%"}).css("background-position", "-250%");
   }
   currentSlide = next;
 }
